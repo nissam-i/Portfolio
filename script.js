@@ -6,25 +6,27 @@ const form = document.getElementById('contactForm');
 const modal = document.getElementById('successModal');
 
 if (form) {
+    let submitted = false;
+
+    // When iframe loads (submission complete), show modal
+    document.getElementById('hidden_iframe').onload = function () {
+        if (submitted) {
+            const button = form.querySelector('button');
+            modal.classList.add('active');
+            form.reset();
+            button.innerText = 'Send Message';
+            button.style.opacity = '1';
+            submitted = false; // Reset
+        }
+    };
+
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
+        // Do NOT preventDefault(); let it submit to iframe
+        submitted = true;
 
-        // Simulate sending
         const button = form.querySelector('button');
-        const originalText = button.innerText;
-
         button.innerText = 'TRANSMITTING...';
         button.style.opacity = '0.7';
-
-        setTimeout(() => {
-            // Show Success Modal
-            modal.classList.add('active');
-
-            // Reset Form and Button
-            form.reset();
-            button.innerText = originalText;
-            button.style.opacity = '1';
-        }, 1500);
     });
 }
 

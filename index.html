@@ -222,23 +222,30 @@
                             Have a project in mind? Let's build something extraordinary together.
                         </p>
 
+                        <!-- Hidden Iframe -->
+                        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
                         <form class="contact-form" id="contactForm"
+                            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScqVqq5MoeWV9cMyK2WYjtCYD6ae7P2Gu4gjgPSAsNICBvh_g/formResponse"
+                            method="POST" target="hidden_iframe"
                             style="width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 20px; text-align: left;">
                             <div class="form-group">
                                 <label
                                     style="display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-secondary);">Name</label>
-                                <input type="text" placeholder="Your Name" class="form-input" required>
+                                <input type="text" name="entry.1450408715" placeholder="Your Name" class="form-input"
+                                    required>
                             </div>
                             <div class="form-group">
                                 <label
                                     style="display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-secondary);">Email</label>
-                                <input type="email" placeholder="your@email.com" class="form-input" required>
+                                <input type="email" name="entry.318943919" placeholder="your@email.com"
+                                    class="form-input" required>
                             </div>
                             <div class="form-group">
                                 <label
                                     style="display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-secondary);">Message</label>
-                                <textarea placeholder="Tell me about your project..." rows="5" class="form-input"
-                                    required></textarea>
+                                <textarea name="entry.776958425" placeholder="Tell me about your project..." rows="5"
+                                    class="form-input" required></textarea>
                             </div>
                             <button type="submit" class="btn-glow"
                                 style="margin-top: 10px; border: none; cursor: pointer;">Send Message</button>
