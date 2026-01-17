@@ -101,45 +101,60 @@ h6 {
 }
 
 /* Header - Floating */
+/* Header - Wide Spaced */
 .header {
     position: fixed;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
-    width: auto;
-    background: rgba(10, 10, 10, 0.5);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 0.75rem 1.5rem;
-    border-radius: 100px;
-    border: 1px solid var(--glass-border);
+    background: rgba(5, 5, 5, 0.8);
+    /* Dark tint */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 5%;
+    /* Wide spacing */
+    border-bottom: 1px solid var(--glass-border);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
 .logo {
+    font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: -0.02em;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.logo::after {
+    content: '.';
+    color: var(--accent-primary);
 }
 
 .nav-list {
     display: flex;
-    gap: 1.5rem;
+    gap: 4rem;
+    /* Wide gap between links */
 }
 
 .nav-link {
-    font-size: 0.85rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 400;
+    transition: all 0.3s;
+    text-transform: capitalize;
+    /* "Home" vs "HOME" - keeping standard */
 }
 
 .nav-link:hover {
-    color: var(--text-primary);
+    color: var(--accent-primary);
+    text-shadow: 0 0 10px var(--accent-primary);
 }
+
+
 
 .nav-toggle {
     display: none;
